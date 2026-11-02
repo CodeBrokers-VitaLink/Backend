@@ -1,0 +1,14 @@
+{
+  "properties": [
+    {
+      "name": "app.frontend-origin",
+      "type": "java.lang.String",
+      "description": "Allowed Angular origin."
+    },
+    {
+      "name": "app.demo-data",
+      "type": "java.lang.Boolean",
+      "description": "Initialize fictional demo data only in dev/test."
+    }
+  ]
+}
