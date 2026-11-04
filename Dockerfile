@@ -1,10 +1,9 @@
 FROM maven:3.9.16-eclipse-temurin-26 AS build
 WORKDIR /app
-COPY .mvn .mvn
-COPY mvnw pom.xml ./
-RUN chmod +x mvnw && ./mvnw dependency:go-offline
+COPY pom.xml ./
+RUN mvn dependency:go-offline
 COPY src src
-RUN ./mvnw clean package -DskipTests
+RUN mvn clean package -DskipTests
 FROM eclipse-temurin:26-jre
 WORKDIR /app
 ENV SPRING_PROFILES_ACTIVE=prod
